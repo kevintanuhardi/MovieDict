@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="MovieDict" customModuleProvider="target">
             <connections>
                 <outlet property="PopularMoviesCollectionView" destination="98D-M4-1C7" id="2mm-Kb-7fY"/>
+                <outlet property="nPMoviesCollectionView" destination="95I-9r-VrK" id="0Wl-q1-956"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,12 +22,12 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popular Movies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cw6-nH-cEc">
-                    <rect key="frame" x="20" y="64" width="117" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="20" y="99" width="129.5" height="23"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="98D-M4-1C7">
-                    <rect key="frame" x="0.0" y="105" width="414" height="260"/>
+                    <rect key="frame" x="0.0" y="132" width="414" height="260"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="260" id="8wV-Kd-FGw"/>
@@ -39,28 +40,56 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8KB-5Q-5ZY">
-                    <rect key="frame" x="184" y="499" width="46" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button"/>
-                    <connections>
-                        <action selector="test:" destination="-1" eventType="touchUpInside" id="ydI-rq-h0c"/>
-                    </connections>
-                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now Playing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBN-GQ-x9e" userLabel="Now Playing">
+                    <rect key="frame" x="20" y="402" width="104" height="23"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="95I-9r-VrK">
+                    <rect key="frame" x="0.0" y="435" width="414" height="260"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="260" id="jPm-Yg-snD"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="260" id="uaX-cp-hMN"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="d01-ld-emZ">
+                        <size key="itemSize" width="120" height="240"/>
+                        <size key="estimatedItemSize" width="120" height="240"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppLogo" translatesAutoresizingMaskIntoConstraints="NO" id="uJ9-ie-FoK">
+                    <rect key="frame" x="20" y="54" width="39.5" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="uJ9-ie-FoK" secondAttribute="height" multiplier="9:8" id="WLM-IX-r3M"/>
+                        <constraint firstAttribute="height" constant="35" id="oGM-6o-B0F"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="Lavender"/>
             <constraints>
-                <constraint firstItem="cw6-nH-cEc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="PIy-tF-AW0"/>
+                <constraint firstItem="uJ9-ie-FoK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="E8o-WR-eLt"/>
+                <constraint firstItem="95I-9r-VrK" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="HW3-t2-tKY"/>
+                <constraint firstItem="95I-9r-VrK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KGJ-3h-7Gg"/>
+                <constraint firstItem="cw6-nH-cEc" firstAttribute="top" secondItem="uJ9-ie-FoK" secondAttribute="bottom" constant="10" id="PIy-tF-AW0"/>
                 <constraint firstItem="cw6-nH-cEc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Q7c-CV-ZF7"/>
                 <constraint firstItem="98D-M4-1C7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="WJC-zC-MOJ"/>
-                <constraint firstItem="98D-M4-1C7" firstAttribute="top" secondItem="cw6-nH-cEc" secondAttribute="bottom" constant="20" id="o7S-i4-ZBf"/>
+                <constraint firstItem="BBN-GQ-x9e" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="lhf-62-wVO"/>
+                <constraint firstItem="98D-M4-1C7" firstAttribute="top" secondItem="cw6-nH-cEc" secondAttribute="bottom" constant="10" id="o7S-i4-ZBf"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="98D-M4-1C7" secondAttribute="trailing" id="rb1-nC-rVy"/>
+                <constraint firstItem="95I-9r-VrK" firstAttribute="top" secondItem="BBN-GQ-x9e" secondAttribute="bottom" constant="10" id="tK5-gr-rGC"/>
+                <constraint firstItem="95I-9r-VrK" firstAttribute="top" secondItem="BBN-GQ-x9e" secondAttribute="bottom" constant="10" id="vno-Y4-6gt"/>
+                <constraint firstItem="BBN-GQ-x9e" firstAttribute="top" secondItem="98D-M4-1C7" secondAttribute="bottom" constant="10" id="wdf-6D-70f"/>
+                <constraint firstItem="uJ9-ie-FoK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="zOX-hm-jCh"/>
             </constraints>
-            <point key="canvasLocation" x="-75" y="146"/>
+            <point key="canvasLocation" x="-75.362318840579718" y="145.98214285714286"/>
         </view>
     </objects>
     <resources>
+        <image name="AppLogo" width="500" height="500"/>
         <namedColor name="Lavender">
             <color red="0.80400002002716064" green="0.9100000262260437" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

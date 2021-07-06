@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailVC" customModule="MovieDict" customModuleProvider="target">
+            <connections>
+                <outlet property="backdropImage" destination="HPj-M0-Vk3" id="jfR-Rn-1G8"/>
+                <outlet property="scrollView" destination="Wzo-fW-A1K" id="31k-Ju-0Vq"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wzo-fW-A1K">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="HPj-M0-Vk3" userLabel="Image">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="562"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="562" id="g53-Q9-duQ"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luca" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MiD-hf-fHH" userLabel="TitleLabel">
+                            <rect key="frame" x="20" y="388" width="62" height="34"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1h 29m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SH3-yD-jpp" userLabel="playtimeLabel">
+                            <rect key="frame" x="20" y="431" width="56" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qaz-wS-vcX" userLabel="DescLabel">
+                            <rect key="frame" x="10" y="562" width="394" height="184"/>
+                            <mutableString key="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.</mutableString>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" name="NotQuiteBlack"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre1 • Genre2 • Genre3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vzi-Cs-tgD" userLabel="GenreLabel">
+                            <rect key="frame" x="20" y="472" width="147.5" height="14.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="6UQ-u6-WEn">
+                            <rect key="frame" x="236" y="518" width="159" height="24"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" image="plus" catalog="system">
+                                <attributedString key="attributedTitle">
+                                    <fragment content="Add To Favorite">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="15"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="fOe-6V-Ygy">
+                            <rect key="frame" x="20" y="517" width="177" height="24"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" name="CornFlowerBlue"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" image="play" catalog="system">
+                                <attributedString key="attributedTitle">
+                                    <fragment content="Watch Trailer">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="15"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                            </state>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="MiD-hf-fHH" firstAttribute="bottom" secondItem="HPj-M0-Vk3" secondAttribute="bottom" constant="-140" id="2Ne-Bp-qLI"/>
+                        <constraint firstItem="Vzi-Cs-tgD" firstAttribute="leading" secondItem="SH3-yD-jpp" secondAttribute="leading" id="CJN-NA-1f4"/>
+                        <constraint firstItem="qaz-wS-vcX" firstAttribute="top" secondItem="HPj-M0-Vk3" secondAttribute="bottom" id="Cih-XT-w61"/>
+                        <constraint firstAttribute="trailing" secondItem="qaz-wS-vcX" secondAttribute="trailing" constant="10" id="Pxs-HW-hOD"/>
+                        <constraint firstItem="HPj-M0-Vk3" firstAttribute="centerX" secondItem="Wzo-fW-A1K" secondAttribute="centerX" id="VUj-bN-BzQ"/>
+                        <constraint firstItem="MiD-hf-fHH" firstAttribute="leading" secondItem="Wzo-fW-A1K" secondAttribute="leading" constant="20" id="ZCI-3d-rsY"/>
+                        <constraint firstItem="qaz-wS-vcX" firstAttribute="leading" secondItem="Wzo-fW-A1K" secondAttribute="leading" constant="10" id="iJz-f4-ce5"/>
+                        <constraint firstAttribute="bottom" secondItem="HPj-M0-Vk3" secondAttribute="bottom" constant="334" id="jKg-23-toL"/>
+                        <constraint firstAttribute="trailing" secondItem="HPj-M0-Vk3" secondAttribute="trailing" id="k6p-LD-iZx"/>
+                        <constraint firstItem="HPj-M0-Vk3" firstAttribute="top" secondItem="Wzo-fW-A1K" secondAttribute="top" id="k89-ZG-ODy"/>
+                        <constraint firstItem="HPj-M0-Vk3" firstAttribute="leading" secondItem="Wzo-fW-A1K" secondAttribute="leading" id="ncx-dk-Lhw"/>
+                        <constraint firstItem="Vzi-Cs-tgD" firstAttribute="top" secondItem="SH3-yD-jpp" secondAttribute="bottom" constant="20" id="raV-wl-PX1"/>
+                        <constraint firstItem="SH3-yD-jpp" firstAttribute="leading" secondItem="MiD-hf-fHH" secondAttribute="leading" id="tCR-4o-tEv"/>
+                        <constraint firstItem="SH3-yD-jpp" firstAttribute="top" secondItem="MiD-hf-fHH" secondAttribute="bottom" constant="9" id="tgu-Kb-s7F"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" name="LightBlue"/>
+            <constraints>
+                <constraint firstItem="Wzo-fW-A1K" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="B4L-IZ-Fht"/>
+                <constraint firstAttribute="bottom" secondItem="Wzo-fW-A1K" secondAttribute="bottom" id="DIq-01-eRJ"/>
+                <constraint firstItem="Wzo-fW-A1K" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mnY-ci-DAU"/>
+                <constraint firstAttribute="trailing" secondItem="Wzo-fW-A1K" secondAttribute="trailing" id="q7A-eC-BTu"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-175.36231884057972" y="130.58035714285714"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Image" width="801" height="1200"/>
+        <image name="play" catalog="system" width="120" height="128"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <namedColor name="CornFlowerBlue">
+            <color red="0.3529999852180481" green="0.54900002479553223" blue="0.83099997043609619" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="LightBlue">
+            <color red="0.63529411764705879" green="0.8666666666666667" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="NotQuiteBlack">
+            <color red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
