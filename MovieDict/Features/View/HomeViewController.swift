@@ -60,35 +60,30 @@ class HomeViewController: UIViewController {
         homeViewModel.popularMovies.bind(to: popularMoviesCollectionView.rx.items(cellIdentifier: "movieCellIdentifier", cellType: MovieCell.self)) {  (row, movie, cell) in
             cell.movie = movie
             }.disposed(by: disposeBag)
-//        popularMoviesCollectionView
-//            .rx
-//            .itemSelected
-//            .subscribe(onNext: {IndexPath in
-//                print(IndexPath)
-//            })
-//            .disposed(by: disposeBag)
+
         popularMoviesCollectionView
                 .rx
             .modelSelected(Movie.self)
-                .subscribe(onNext: { (model) in
-                    //Your code
-                    print(model)
+                .subscribe(onNext: { (movie) in
+                    self.navigateToMovieDetail(movieId: movie.id)
                 }).disposed(by: disposeBag)
         
         homeViewModel.nPMovies.bind(to: nPMoviesCollectionView.rx.items(cellIdentifier: "movieCellIdentifier", cellType: MovieCell.self)) {  (row, movie, cell) in
             cell.movie = movie
             }.disposed(by: disposeBag)
+        
+        nPMoviesCollectionView
+            .rx
+            .modelSelected(Movie.self)
+                .subscribe(onNext: { (movie) in
+                    self.navigateToMovieDetail(movieId: movie.id)
+                }).disposed(by: disposeBag)
+    }
+    
+    private func navigateToMovieDetail(movieId: Int) {
+        let detailVC = DetailVC()
+        detailVC.movieId = movieId
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }
 
-//extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-//
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return 5
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "movieCellIdentifier", for: indexPath) as! MovieCell
-//        return cell
-//    }
-//}

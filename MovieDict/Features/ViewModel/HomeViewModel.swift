@@ -26,7 +26,6 @@ class HomeViewModel {
                 print(failure)
             case .success(let returnJson):
                 let movies = returnJson["results"].arrayValue.map{Movie($0)}
-                print("popular", movies[0])
                 self.popularMovies.onNext(movies)
             }
         })
@@ -41,7 +40,6 @@ class HomeViewModel {
                 print(failure)
             case .success(let returnJson):
                 let movies = returnJson["results"].arrayValue.map{Movie($0)}
-                print("np", movies[0])
                 self.nPMovies.onNext(movies)
             }
         })

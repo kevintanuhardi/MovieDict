@@ -9,8 +9,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailVC" customModule="MovieDict" customModuleProvider="target">
             <connections>
+                <outlet property="backButton" destination="oiw-WK-xsE" id="2Jx-5t-lla"/>
                 <outlet property="backdropImage" destination="HPj-M0-Vk3" id="jfR-Rn-1G8"/>
+                <outlet property="descLabel" destination="qaz-wS-vcX" id="HZe-qv-5ai"/>
+                <outlet property="genreLabel" destination="Vzi-Cs-tgD" id="jVO-dX-ljI"/>
+                <outlet property="runtimeLabel" destination="SH3-yD-jpp" id="L1V-l3-qDu"/>
                 <outlet property="scrollView" destination="Wzo-fW-A1K" id="31k-Ju-0Vq"/>
+                <outlet property="titleLabel" destination="MiD-hf-fHH" id="4uc-MH-9bt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,7 +27,7 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wzo-fW-A1K">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="HPj-M0-Vk3" userLabel="Image">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poster-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="HPj-M0-Vk3" userLabel="Image">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="562"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="562" id="g53-Q9-duQ"/>
@@ -35,7 +40,7 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1h 29m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SH3-yD-jpp" userLabel="playtimeLabel">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1h 29m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SH3-yD-jpp" userLabel="RuntimeLabel">
                             <rect key="frame" x="20" y="431" width="56" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -69,6 +74,20 @@
                                 </attributedString>
                             </state>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiw-WK-xsE" userLabel="BackButton">
+                            <rect key="frame" x="16" y="62" width="36" height="32.5"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="S07-pK-A20"/>
+                                <constraint firstAttribute="width" constant="36" id="gkt-Pt-0SL"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <inset key="imageEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                            <state key="normal" title="" backgroundImage="chevron.left" catalog="system"/>
+                            <connections>
+                                <action selector="backButtonPressed:" destination="-1" eventType="touchUpInside" id="D1Z-Xl-fKs"/>
+                            </connections>
+                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="fOe-6V-Ygy">
                             <rect key="frame" x="20" y="517" width="177" height="24"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
@@ -87,7 +106,9 @@
                         </button>
                     </subviews>
                     <constraints>
+                        <constraint firstItem="oiw-WK-xsE" firstAttribute="top" secondItem="Wzo-fW-A1K" secondAttribute="top" constant="60" id="16u-Re-Hjc"/>
                         <constraint firstItem="MiD-hf-fHH" firstAttribute="bottom" secondItem="HPj-M0-Vk3" secondAttribute="bottom" constant="-140" id="2Ne-Bp-qLI"/>
+                        <constraint firstItem="oiw-WK-xsE" firstAttribute="leading" secondItem="Wzo-fW-A1K" secondAttribute="leading" constant="16" id="2Qq-br-Zcf"/>
                         <constraint firstItem="Vzi-Cs-tgD" firstAttribute="leading" secondItem="SH3-yD-jpp" secondAttribute="leading" id="CJN-NA-1f4"/>
                         <constraint firstItem="qaz-wS-vcX" firstAttribute="top" secondItem="HPj-M0-Vk3" secondAttribute="bottom" id="Cih-XT-w61"/>
                         <constraint firstAttribute="trailing" secondItem="qaz-wS-vcX" secondAttribute="trailing" constant="10" id="Pxs-HW-hOD"/>
@@ -116,9 +137,10 @@
         </view>
     </objects>
     <resources>
-        <image name="Image" width="801" height="1200"/>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="play" catalog="system" width="120" height="128"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="poster-placeholder" width="300" height="450"/>
         <namedColor name="CornFlowerBlue">
             <color red="0.3529999852180481" green="0.54900002479553223" blue="0.83099997043609619" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

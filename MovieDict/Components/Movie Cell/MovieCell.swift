@@ -22,7 +22,6 @@ class MovieCell: UICollectionViewCell {
     }
     
     func setupView() {
-        print(movie?.posterPath)
         self.layer.cornerRadius = 8
         if let posterPath = movie?.posterPath,
            let title = movie?.title,
