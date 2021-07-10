@@ -10,6 +10,8 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var homeNavigationController: UINavigationController!
+    var searchNavigationController: UINavigationController!
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -17,8 +19,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        let viewController = HomeViewController() // Handle Develop Here
+        
+        let tabBarController = UITabBarController()
+        let homeVC = HomeViewController()
+        let searchVC = SearchVC()
+        homeNavigationController = UINavigationController.init(rootViewController: homeVC)
+        searchNavigationController = UINavigationController.init(rootViewController: searchVC)
+        tabBarController.viewControllers = [homeNavigationController, searchNavigationController]
+        
+        let homeItem = UITabBarItem(title: nil, image: UIImage(systemName: "house"), tag: 0)
+        let searchItem = UITabBarItem(title: nil, image: UIImage(systemName: "magnifyingglass"), tag: 1)
+        
+        homeNavigationController.tabBarItem = homeItem
+        searchNavigationController.tabBarItem = searchItem
+        
+        UITabBar.appearance().tintColor = UIColor(red: 255/255.0, green: 209/255.0, blue: 48/255.0, alpha: 1.0)
+        UITabBar.appearance().unselectedItemTintColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        UITabBar.appearance().barStyle = UIBarStyle.black
+        UITabBar.appearance().backgroundColor = UIColor(red: 32/255.0, green: 33/255.0, blue: 35/255.0, alpha: 1.0)
+        
+        
+        let viewController = tabBarController // Handle Develop Here
         let navigationBar = UINavigationController(rootViewController: viewController)
+        navigationBar.isNavigationBarHidden = true
         window?.rootViewController = navigationBar
         window?.makeKeyAndVisible()
     }

@@ -13,6 +13,7 @@ enum Endpoints{
         case popularMovies
         case nowPlayingMovies
         case movieDetail(id: Int)
+        case searchMovie(searchQuery: String)
         
         public var url: String {
             let MDBbaseUrl = Constants.networking.theMovieDB.baseUrl
@@ -24,6 +25,8 @@ enum Endpoints{
                 "\(MDBbaseUrl)3/movie/now_playing?api_key=\(MDBapiKey)&language=en-US&include_adult=false&page=1"
             case .movieDetail(let id): return
                 "\(MDBbaseUrl)3/movie/\(id)?api_key=\(MDBapiKey)&language=en-US"
+            case .searchMovie(let searchQuery): return
+                "\(MDBbaseUrl)3/search/movie?api_key=\(MDBapiKey)&language=en-US&query=\(searchQuery)"
             }
         }
 }
@@ -98,6 +101,32 @@ class APIManager {
     
     static func getNPMovies(completion: @escaping (ApiResult)->Void ) {
         AF.request(Endpoints.nowPlayingMovies.url)
+            .validate()
+            .responseJSON{ json in
+                switch json.result {
+                case .failure:
+                    completion(ApiResult.failure(.connectionError))
+                case .success(let jsonData):
+                    if let json = try? JSONSerialization.data(withJSONObject: jsonData, options: .sortedKeys) {
+                        do {
+                            let data = try JSON(data: json)
+                            completion(ApiResult.success(data))
+                        } catch {
+                            completion(ApiResult.failure(.connectionError))
+                        }
+                    } else {
+                        completion(ApiResult.failure(.connectionError))
+                    }
+                    
+                    
+                }
+                    
+            }
+    }
+    
+    static func searchMovie(searchQuery: String, completion: @escaping (ApiResult)->Void ) {
+        guard let escapedString = searchQuery.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return  }
+        AF.request(Endpoints.searchMovie(searchQuery: escapedString).url)
             .validate()
             .responseJSON{ json in
                 switch json.result {
